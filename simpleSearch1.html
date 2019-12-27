@@ -1,0 +1,119 @@
+<!DOCTYPE html> 
+
+<head>
+    <title>simple.Search</title>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="css1.css" rel="stylesheet">
+</head>
+
+<body>
+
+        <div id="settings">
+                <h1 id="settingsh1">Settings</h1>
+                <p id="settingsP1" class="settingsPC"> <img src="https://i.imgur.com/dwTZblQ.png" id="lightIcon">Night mode</p>
+              </div>
+              <img src="https://i.imgur.com/ZjFFQnt.png" id="gearIcon">
+              <div class="main">
+                <img src="https://i.imgur.com/UM48BdG.png" id="logo">
+                <div class="search" id="search">
+                <input type="search" name="simpleSearch" id="searchbox">
+                  <img src="https://i.imgur.com/Fu3kJcv.png" id="searchIcon">
+                </div>
+              </div>
+              <div class="footer" id="footer"></div>
+              
+
+<script>
+const settings=document.getElementById("settings")
+const gearIcon=document.getElementById("gearIcon")
+const settingsh1=document.getElementById("settingsh1")
+const settingsP1=document.getElementById("settingsP1")
+let settingsBoolean=1
+
+const lightIcon=document.getElementById("lightIcon")
+const settingsDiv=document.getElementById("settings")
+const footerDiv=document.getElementById("footer")
+const searchDiv=document.getElementById("search")
+const searchbox=document.getElementById("searchbox")
+const searchIcon=document.getElementById("searchIcon")
+let lightBoolean=1
+
+const bodylight=()=>{
+  if(lightBoolean==1){
+    document.body.style.backgroundColor="#434C49";
+  document.body.style.transition="background-color 0.5s ease";
+  settingsDiv.style.backgroundColor="#242826";
+  settingsDiv.style.transition="background-color 0.5s ease, color 0.5s ease";
+  footerDiv.style.backgroundColor="#333A37";
+  footerDiv.style.transition="background-color 0.5s ease";
+  settingsDiv.style.color="white";
+  searchDiv.style.backgroundColor="#333A37";
+  searchDiv.style.transition="background-color 0.5s ease, box-shadow 1s ease";
+  searchbox.style.backgroundColor="rgba(0,0,0,0)";
+  searchbox.style.color="white"
+  searchbox.style.transition="background-color 0.5s ease";
+  searchDiv.style.boxShadow="15px 15px #242826";
+  gearIcon.setAttribute("src","https://i.imgur.com/azmN3cP.png");
+  lightIcon.setAttribute("src","https://i.imgur.com/SplxNeH.png");
+  searchIcon.setAttribute("src","https://i.imgur.com/UrhBBEg.png");
+    lightBoolean++
+  }
+  else{
+    document.body.style.backgroundColor="#AED7C9";
+  document.body.style.transition="background-color 0.5s ease";
+  settingsDiv.style.backgroundColor="white";
+  settingsDiv.style.transition="background-color 0.5s ease, color 0.5s ease";
+  footerDiv.style.backgroundColor="#91BCA9";
+  footerDiv.style.transition="background-color 0.5s ease";
+  settingsDiv.style.color="#525254";
+  searchDiv.style.backgroundColor="white";
+  searchDiv.style.transition="background-color 0.5s ease, box-shadow 1s ease";
+  searchbox.style.backgroundColor="rgba(0,0,0,0)";
+  searchbox.style.color="#525254"
+  searchbox.style.transition="background-color 0.5s ease";
+  searchDiv.style.boxShadow="15px 15px #B3B3B3";
+  gearIcon.setAttribute("src","https://i.imgur.com/ZjFFQnt.png");
+  lightIcon.setAttribute("src","https://i.imgur.com/dwTZblQ.png");
+  searchIcon.setAttribute("src","https://i.imgur.com/Fu3kJcv.png");
+    lightBoolean--
+  }
+}
+
+lightIcon.addEventListener("click",bodylight)
+
+const menuOpen=()=>{
+  if (settingsBoolean==1){
+  settings.style.transform="rotate(0deg)";
+  settings.style.height="130vh";
+  settings.style.right="-50px";
+  settings.style.transition="transform 0.5s ease, height 0.75s ease, right 1.5s ease";
+    settingsh1.style.opacity="1";
+    settingsh1.style.transition="opacity 0.5s ease 0.75s"
+    settingsP1.style.opacity="1";
+    settingsP1.style.transition="opacity 0.5s ease 0.75s"
+    settingsBoolean++;
+    console.log(settingsBoolean)
+  }
+  else {
+  settings.style.transform="rotate(-45deg)";
+  settings.style.height="500px";
+  settings.style.right="-300px";
+  settings.style.transition="transform 0.75s ease, height 1s ease, right 1s ease";
+    settingsh1.style.opacity="0";
+    settingsh1.style.transition="opacity 0.75s ease"
+    settingsP1.style.opacity="0";
+    settingsP1.style.transition="opacity 0.75s ease"
+    settingsBoolean--;
+    console.log(settingsBoolean)
+  }
+}
+
+gearIcon.addEventListener("click",menuOpen)
+
+
+
+
+</script>
+
+</body>
