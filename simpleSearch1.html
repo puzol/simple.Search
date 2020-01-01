@@ -1,14 +1,15 @@
 <!DOCTYPE html> 
-
+<html ng-app='simpleSearchApp'>
 <head>
     <title>simple.Search</title>
     <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="css1.css" rel="stylesheet">
 </head>
 
 <body>
-
+        <div id="backText">{{searchTerms}}</div>
         <div id="settings">
                 <h1 id="settingsh1">Settings</h1>
                 <p id="settingsP1" class="settingsPC"> <img src="https://i.imgur.com/dwTZblQ.png" id="lightIcon">Night mode</p>
@@ -17,7 +18,7 @@
               <div class="main">
                 <img src="https://i.imgur.com/UM48BdG.png" id="logo">
                 <div class="search" id="search">
-                <input type="search" name="simpleSearch" id="searchbox">
+                <input type="search" name="simpleSearch" id="searchbox" placeholder="Begin your search..." ng-model='searchTerms'>
                   <img src="https://i.imgur.com/Fu3kJcv.png" id="searchIcon">
                 </div>
               </div>
@@ -111,9 +112,8 @@ const menuOpen=()=>{
 
 gearIcon.addEventListener("click",menuOpen)
 
-
-
-
+var myApp = angular.module('simpleSearchApp',[]);
 </script>
 
 </body>
+</html>
